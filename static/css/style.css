@@ -1,0 +1,151 @@
+/* Custom styles for RSI Trading Dashboard */
+
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border-radius: 0.5rem;
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 600;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+.table th {
+    border-top: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.table td {
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+/* RSI Value Styling */
+.rsi-oversold {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.rsi-neutral {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.rsi-overbought {
+    color: #dc3545;
+    font-weight: bold;
+}
+
+/* Signal badges */
+.signal-buy {
+    background-color: #28a745;
+}
+
+.signal-sell {
+    background-color: #dc3545;
+}
+
+.signal-neutral {
+    background-color: #6c757d;
+}
+
+/* Status indicators */
+.status-success {
+    color: #28a745;
+}
+
+.status-error {
+    color: #dc3545;
+}
+
+/* Price formatting */
+.price {
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+}
+
+/* Symbol styling */
+.symbol {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+/* Loading animation */
+.spinner-border {
+    color: #007bff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+}
+
+/* Auto-refresh indicator */
+.refresh-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #28a745;
+    border-radius: 50%;
+    margin-left: 5px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Hover effects */
+.table-hover tbody tr:hover {
+    background-color: rgba(0, 123, 255, 0.075);
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    transition: transform 0.2s ease;
+}
+
+/* Card hover effect */
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+    transition: box-shadow 0.3s ease;
+}

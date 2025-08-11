@@ -79,6 +79,9 @@ def get_rsi_data():
                     "status": "no_data"
                 })
 
+        # Sắp xếp theo RSI tăng dần (RSI None sẽ ở cuối)
+        results.sort(key=lambda x: x['rsi'] if x['rsi'] is not None else float('inf'))
+
         return results
 
     except Exception as e:

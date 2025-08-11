@@ -2,6 +2,8 @@ from flask import Flask, render_template, jsonify
 from tradingview_ta import get_multiple_analysis, Interval
 from datetime import datetime
 import time
+import threading
+import requests
 
 app = Flask(__name__)
 
@@ -83,6 +85,30 @@ def get_rsi_data():
         print(f"Lỗi khi lấy dữ liệu: {e}")
         return []
 
+def keep_alive_service():
+    """
+    Gửi request định kỳ để giữ service không bị sleep
+    """
+    url = "https://trading-indicator-rsi.onrender.com"
+
+    while True:
+        try:
+            response = requests.get(url, timeout=10)
+            print(f"Keep-alive ping: {response.status_code} at {datetime.now().strftime('%H:%M:%S')}")
+        except Exception as e:
+            print(f"Keep-alive failed: {e}")
+
+        # Chờ 60 giây (1 phút)
+        time.sleep(60)
+
+def start_keep_alive():
+    """
+    Khởi động keep-alive service trong background thread
+    """
+    keep_alive_thread = threading.Thread(target=keep_alive_service, daemon=True)
+    keep_alive_thread.start()
+    print("Keep-alive service started - pinging every 1 minute")
+
 @app.route('/')
 def index():
     """
@@ -103,4 +129,8 @@ def api_rsi():
     })
 
 if __name__ == '__main__':
+    # Khởi động keep-alive service
+    start_keep_alive()
+
+    # Chạy Flask app
     app.run(debug=True, host='0.0.0.0', port=5000)

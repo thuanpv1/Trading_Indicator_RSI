@@ -1,5 +1,2 @@
 Flask==2.3.3
-oandapyV20==0.7.2
-pandas==2.1.1
-pandas-ta==0.3.14b0
-python-dotenv==1.0.0
+tradingview-ta==3.3.0

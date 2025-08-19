@@ -9,13 +9,10 @@ app = Flask(__name__)
 
 # Danh sách cặp và khung thời gian
 pairs = [
-    {"symbol": "AUDJPY", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "AUDUSD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "AUDCHF", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "AUDCAD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "EURUSD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
-    {"symbol": "EURCAD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
-    {"symbol": "EURJPY", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "EURAUD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "EURGBP", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "GBPCHF", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
@@ -23,10 +20,8 @@ pairs = [
     {"symbol": "GBPUSD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "USDJPY", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "USDCHF", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
-    {"symbol": "USDCAD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "NZDUSD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
     {"symbol": "GBPAUD", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
-    {"symbol": "EURCHF", "exchange": "OANDA", "interval": Interval.INTERVAL_4_HOURS},
 ]
 
 def get_rsi_data():
